@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'blog.apps.BlogConfig',
+    'search.apps.SearchConfig',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
