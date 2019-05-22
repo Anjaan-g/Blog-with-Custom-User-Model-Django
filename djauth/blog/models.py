@@ -51,6 +51,7 @@ class BlogPost(models.Model):
 
     class Meta:
         ordering=['-publish_date','-updated','-timestamp']
+
     def get_absolute_url(self):
         return f"/blog/{self.slug}"
 
@@ -60,8 +61,8 @@ class BlogPost(models.Model):
     def get_delete_url(self):
         return f"{ self.get_absolute_url() }/delete"
 
-    def get_comment_url(self):
-        return f"{ self.get_absolute_url() }/comment"
+    # def get_comment_url(self):
+        # return f"{ self.get_absolute_url() }/comment"
 
 # class Comment(models.Model):
 #     user = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.conf import settings
 from django.urls import path, include
 from django.views.generic.base import TemplateView
 from blog.views import (
@@ -17,3 +18,8 @@ urlpatterns = [
     path('search/',search_view),
 
 ]
+if settings.DEBUG:
+    #test mode
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

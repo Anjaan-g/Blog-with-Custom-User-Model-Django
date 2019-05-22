@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block title %}{{ blog_post.title }}{% endblock %}
+
 {% block content %}
   <div class="row">
     {% include 'blog/list-inline.html' with blog_post=object detail=True %}
@@ -9,20 +11,20 @@
       <div class='col-12'>
           <a href="{{object.get_edit_url}}"> Edit </a>
           <a href="{{object.get_delete_url}}"> Delete </a>
-          <a href="{{object.get_comment_url}}">Comment</a>
+          <!-- <a href="{{object.get_comment_url}}">Comment</a> -->
       </div>
         <hr>
-      {% for comment in comments %}
+      <!-- {% for comment in comments %}
         <div class="col-12 ">
           <div class="comment">
             <div class="date">{{ comment.time_stamp }}</div>
             <strong>{{ comment }}</strong>
             <p>{{ comment.content|linebreaks }}</p>
-          </div>
+          </div> -->
 
-      {% empty %}
+      <!-- {% empty %}
           <p>No comments here yet.</p>
-      {% endfor %}
+      {% endfor %} -->
       </div>
       {% endif %}
     {% endif %}
