@@ -7,6 +7,7 @@ from blog.views import (
 )
 
 app_name='blog'
+
 urlpatterns = [
     path('',blog_post_list_view),
     path('<str:slug>',blog_post_detail_view),

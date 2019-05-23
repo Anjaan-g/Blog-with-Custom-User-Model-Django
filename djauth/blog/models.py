@@ -61,6 +61,9 @@ class BlogPost(models.Model):
     def get_delete_url(self):
         return f"{ self.get_absolute_url() }/delete"
 
+    def __str__(self):
+        return self.title
+
     # def get_comment_url(self):
         # return f"{ self.get_absolute_url() }/comment"
 
